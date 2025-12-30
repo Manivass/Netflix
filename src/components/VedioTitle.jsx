@@ -1,0 +1,28 @@
+import React from "react";
+import { FaPlay } from "react-icons/fa";
+import { IoIosInformationCircleOutline } from "react-icons/io";
+
+const VedioTitle = ({ original_title, overview }) => {
+  return (
+    <div className=" bg-gradient-to-r from-black absolute w-screen h-screen pl-[5%] pt-[17%] text-white z-10">
+      <h2 className="text-6xl font-semibold mb-8">{original_title}</h2>
+      <p className="text-2xl text-white/80 w-4/12 mb-8">{overview}</p>
+      <div className="flex gap-4 ">
+        <button className="flex gap-1 text-2xl font-semibold px-9.5  py-4 bg-white rounded-lg text-black hover:bg-white/50 hover:text-white cursor-pointer">
+          <span className="translate-y-1 text-2xl">
+            <FaPlay />
+          </span>{" "}
+          Play{" "}
+        </button>
+        <button className="flex gap-2 text-2xl font-semibold px-9.5  py-4 bg-white/50 rounded-lg cursor-pointer">
+          More Info
+          <span className="translate-y-0.5 text-3xl font-semibold">
+            <IoIosInformationCircleOutline />
+          </span>{" "}
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default VedioTitle;
