@@ -10,7 +10,7 @@ const VedioBackground = ({ movieId }) => {
   return (
     <div className="">
       <iframe
-        className="absolute top-0 right-0 min-w-screen min-h-screen"
+        className="relative w-screen h-screen  min-w-full min-h-full"
         src={
           "https://www.youtube.com/embed/" +
           trailer?.key +

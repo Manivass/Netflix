@@ -24,7 +24,13 @@ const Browse = () => {
       });
   };
 
-  
+  // Main Container
+  // - Movie Background
+  // - Movie Title
+
+  // Secondry Container
+  //
+
   return (
     <div>
       <Header />
@@ -41,19 +47,14 @@ const Browse = () => {
         </button>
       </div>
 
-      <div>
-         <MainContainer />
-         <SecondryContainer />
+      <div className="w-auto bg-black">
+        <MainContainer />
+        <div className="-mt-15">
+          <SecondryContainer />
+        </div>
       </div>
     </div>
   );
 };
-
-// Main Container
-  // - Movie Background
-  // - Movie Title
-
-// Secondry Container
-  // 
 
 export default Browse;
