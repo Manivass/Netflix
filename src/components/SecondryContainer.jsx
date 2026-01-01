@@ -2,9 +2,9 @@ import React from "react";
 import MoviesContainer from "./MoviesContainer";
 import { useSelector } from "react-redux";
 import { MOVIE_OPTIONS } from "../utils/constant";
-import usePopularMovies from "../hooks/usePopularMovies";
-import useTopRatedMovies from "../hooks/useTopRatedMovies";
-import useUpcomingMovies from "../hooks/useUpcomingMovies";
+import usePopularMovies from "../CustomHooks/usePopularMovies";
+import useTopRatedMovies from "../CustomHooks/useTopRatedMovies";
+import useUpcomingMovies from "../CustomHooks/useUpcomingMovies";
 
 const SecondryContainer = () => {
   //Movies Popular
@@ -24,8 +24,8 @@ const SecondryContainer = () => {
   const upComingMovies = useSelector((store) => store.movies.upComingMovies);
 
   return (
-    <div className=" bg-black ">
-      <div className=" px-20 pb-25 -mt-40 relative z-20">
+    <div className="px-20 bg-black ">
+      <div className="  pb-25 -mt-33 relative z-20">
         <div>
           <MoviesContainer title={"Now Playing"} movieList={nowPlaying} />
         </div>

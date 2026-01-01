@@ -8,6 +8,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { AVATAR } from "../utils/constant";
+import { BG_URL } from "../utils/constant";
 
 const LoginPage = () => {
   const [signup, setSignup] = useState(false);
@@ -65,14 +66,15 @@ const LoginPage = () => {
     setSignup(!signup);
   };
   return (
-    <div className="h-screen bg-cover bg-center bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/f86b16bf-4c16-411c-8357-22d79beed09c/web/IN-en-20251222-TRIFECTA-perspective_d4acb127-f63f-4a98-ad0b-4317b0b3e500_medium.jpg')]">
+    <div className="h-screen bg-cover bg-center " style={{ backgroundImage: `url(${BG_URL})` }}
+>
       <Header />
       <div className="min-h-screen  flex justify-center  items-center">
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="w-3/12  h-auto flex flex-col   bg-black/70 text-white px-12 py-8 rounded-lg "
+          className="w-3/13  h-auto flex flex-col px-14 py-8  bg-black/80 text-white rounded-lg "
         >
-          <h2 className="text-4xl font-semibold mb-4 ">
+          <h2 className="text-3xl font-semibold mb-4 ">
             {signup ? "Sign Up" : "Sign In"}
           </h2>
           {signup && (
@@ -80,7 +82,7 @@ const LoginPage = () => {
               type="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="h-15 bg-black/70 px-6 py-2 text-2xl outline-none outline-2 border border-gray-700 mb-6"
+              className="h-10 bg-black/70 px-4 py-4 text-md outline-none outline-2 border border-gray-700 mb-6"
               placeholder="Name"
             />
           )}
@@ -88,25 +90,25 @@ const LoginPage = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="h-15 bg-black/70 px-6 py-2 text-2xl outline-none outline-2 border border-gray-700 mb-6"
+            className="h-10 bg-black/70 px-4 py-4 text-md outline-none outline-2 border border-gray-700 mb-6"
             placeholder="E-mail"
           />
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="h-15 bg-black/70 px-6 py-2 text-2xl outline-none outline-2 border border-gray-700 mb-2"
+            className="h-10 bg-black/70 px-4 py-4 text-md outline-none outline-2 border border-gray-700 "
             placeholder="Password"
           />
-          <span className="min-h-7 text-red-500 text-xl ml-3 ">{err}</span>
+          <span className="min-h-7 text-red-500 text-sm ml-3 ">{err}</span>
           <button
-            className="bg-red-700 text-white text-xl py-3 px-4 w-full mt-2 mb-4"
+            className="bg-red-600 text-md  py-2 rounded-sm mb-2 "
             onClick={(e) => handleSubmit(e)}
           >
             Sign {signup ? "Up" : "In"}
           </button>
 
-          <h2 onClick={handleSignUp} className="text-xl">
+          <h2 onClick={handleSignUp} className="text-md">
             {signup ? "Already have Account? " : "New to Netflix? "}
             <span className="underline cursor-pointer ">
               {signup ? "Sign In" : "Sign Up"}

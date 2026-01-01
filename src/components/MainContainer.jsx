@@ -6,7 +6,7 @@ import VedioBackground from "./VedioBackground";
 const MainContainer = () => {
   const promotedMovie = useSelector((store) => store.movies?.nowPlaying);
   if (!promotedMovie) return null;
-  const movieDetails = promotedMovie[1];
+  const movieDetails = promotedMovie[7];
   console.log(movieDetails);
 
   let { original_title, overview, id } = movieDetails;

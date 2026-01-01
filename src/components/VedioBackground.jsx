@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import React from "react";
 import { MOVIE_OPTIONS } from "../utils/constant";
-import useTrailer from "../hooks/useTrailer";
+import useTrailer from "../CustomHooks/useTrailer";
 const VedioBackground = ({ movieId }) => {
   useTrailer(movieId); // to fetch the movie ID to get Trailer
 
