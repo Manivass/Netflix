@@ -1,5 +1,5 @@
 const lang = {
-    en : {
+    English : {
         search : "search" ,
         GPTSearchPlaceHolder : "What you like to watch today ?",
     },

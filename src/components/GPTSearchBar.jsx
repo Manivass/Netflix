@@ -1,6 +1,8 @@
 import React from "react";
 import lang from "../utils/languageConstant";
+import { useSelector } from "react-redux";
 const GPTSearchBar = () => {
+  const userPreferredLang = useSelector((store) => store.userInfo.userLanguage);
   return (
     <div className="z-20 w-full  pt-25  flex justify-center">
       <form
@@ -9,10 +11,10 @@ const GPTSearchBar = () => {
       >
         <input
           className="bg-white text-black py-2 px-4 col-span-10 mr-6 outline-neutral-600 rounded-md text-md "
-          placeholder={lang["தமிழ்"].GPTSearchPlaceHolder}
+          placeholder={lang[userPreferredLang].GPTSearchPlaceHolder}
         />
         <button className="text-md text-white bg-red-600  col-span-2 rounded-md cursor-pointer">
-          {lang.தமிழ்.search}
+          {lang[userPreferredLang].search}
         </button>
       </form>
     </div>

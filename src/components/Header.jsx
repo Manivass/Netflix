@@ -10,6 +10,7 @@ import { removeMovies } from "../Store/moviesSlice";
 import { signOut } from "firebase/auth";
 import { removeUser } from "../Store/userSlice";
 import { signOutToggle, toggleGPTSearch } from "../Store/toggleGPTSlice";
+import { changeLanguage } from "../Store/configureSlice";
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -45,6 +46,12 @@ const Header = () => {
     dispatch(toggleGPTSearch());
   };
 
+  const handleSelectLanguage = (e) => {
+    dispatch(changeLanguage(e.target.value));
+    console.log(e.target.value);
+    
+  }
+
   return (
     <div className="bg-gradient-to-b   from-black w-full absolute px-4 flex justify-between z-20">
       <div className="">
@@ -52,8 +59,8 @@ const Header = () => {
       </div>
       {user && (
         <div className="absolute top-4 right-4 flex gap-4 items-center z-20">
-          <select className="p-3 bg-blue-950 text-white outline-0">
-            {LANGUAGE_OPTION?.map((lang) => <option key={lang.identifier} className="bg-white text-black">{lang.value}</option> )}
+          <select className="p-3 bg-blue-950 text-white outline-0 cursor-pointer" onChange={handleSelectLanguage}>
+            {LANGUAGE_OPTION?.map((lang) => <option key={lang.identifier}  className="bg-white text-black ">{lang.value}</option> )}
           </select>
           <button
             onClick={handleGPTSearch}

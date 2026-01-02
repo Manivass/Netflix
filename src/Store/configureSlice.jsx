@@ -4,7 +4,7 @@ const configureStore = createSlice(
     {
         name : "configure" ,
         initialState : {
-            userLanguage : "en" ,
+            userLanguage : "English" ,
         },
         reducers : {
             changeLanguage : (state , action) => {
